@@ -1,5 +1,6 @@
-from flask import Flask, g, request
+from flask import Flask, g, request, render_template
 from flask_cors import CORS
+from flask_mail import Mail, Message
 import pymysql
 import logging
 import datetime
@@ -19,7 +20,6 @@ def teardown_request(exception):
   print("Closing the connection to the database...")
   g.cursor.close()
   g.db.close()
-
 
 @app.route("/api/recommendations", methods=["GET"])
 def get_recommendation():
@@ -163,6 +163,7 @@ def add_recommendation():
     logging.error(e)
     return {"isSuccessful":False}
 
+
 @app.route("/api/project/add", methods=["POST"])
 def add_project():
   try:
@@ -176,27 +177,42 @@ def add_project():
     logging.error(e)
     return {"isSuccessful":False}
 
+
 @app.route("/api/certificate/add", methods=["POST"])
 def add_certificate():
   try:
     certificate = request.json
     #print(blog)
     query = "Insert into certificates values(%s, %s, %s, %s, %s);"
-    g.cursor.execute(query, [certificate["id"], certificate["imageUrl"], certificate["title"], False, datetime.datetime.now()])
+    g.cursor.execute(query, [certificate["id"], certificate["imageUrl"], certificate["title"], True, datetime.datetime.now()])
     
     return {"isSuccessful":True}
   except Exception as e:
     logging.error(e)
     return {"isSuccessful":False}
 
+
 @app.route("/api/contact/send", methods=["POST"])
-def send_contact():
+def send_contact_details():
   try:
-    certificate = request.json
-    #print(blog)
-    query = "Insert into certificates values(%s, %s, %s, %s, %s);"
-    g.cursor.execute(query, [certificate["id"], certificate["imageUrl"], certificate["title"], True, datetime.datetime.now()])
+    contact_details = request.json
+
+    app.config['MAIL_SERVER']='smtp.gmail.com'
+    app.config['MAIL_PORT'] = 465
+    app.config['MAIL_USERNAME'] = 'arpitportfolio01@gmail.com'
+    app.config['MAIL_PASSWORD'] = 'Ferr@ri1_'
+    app.config['MAIL_USE_TLS'] = False
+    app.config['MAIL_USE_SSL'] = True
+
+    mail = Mail(app)
     
+    msg = Message("Someone contacted you from your portfoliowebsite!", sender = contact_details["email"], recipients=["arpitayush94@gmail.com"])
+    msg.body = contact_details["message"]
+
+    mail.send(msg)
+    
+    print(contact_details)
+
     return {"isSuccessful":True}
   except Exception as e:
     logging.error(e)

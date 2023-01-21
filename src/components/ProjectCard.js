@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 
 function modifyTitleView(title) {
   if (title.length > 25) {
+    if (title[24] === " ") {
+      return title.slice(0, 24) + "...";
+    }
     return title.slice(0, 25) + "...";
   }
   return title;

@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+function onClick() {
+  alert("Link only accessible by the owner of the website!");
+}
+
 function Footer() {
   return (
     <footer>
@@ -20,15 +24,15 @@ function Footer() {
             <Link to="/contact" className="text-light d-block mb-1">
               Contact me
             </Link>
-            <Link to="/write-a-recommendation" className="text-light">
+            <Link to="/write-a-recommendation" className="text-light d-block mb-1">
               Write a recommendation<i className="fas fa-heart text-light"></i>
             </Link>
-            <Link to="/project/add" className="text-light d-block mb-1">
+            <a href="#unaccessibleforyou" className="text-light d-block mb-1" onClick={onClick}>
               Add Project
-            </Link>
-            <Link to="/certificate/add" className="text-light d-block mb-1">
+            </a>
+            <a href="#unaccessibleforyou" className="text-light d-block mb-1" onClick={onClick}>
               Add Certificate
-            </Link>
+            </a>
           </div>
           <div className="col-12 col-md-4 text-light text-center mt-3">
             <h2 className="text-light">Have something in mind?</h2>
@@ -40,7 +44,7 @@ function Footer() {
           <div className="col-12 col-md-4">
             <h5 className="text-info pb-2">Social</h5>
             <a href="https://www.linkedin.com/in/arpit-ayush-li">
-              <i className="fab fa-linkedin text-light h1 d-block"></i>
+              <i className="fab fa-brands fa-linkedin text-light h1 d-block"></i>
             </a>
             <a href="https://www.instagram.com/_arpit_ayush/">
               <i className="fab fa-brands fa-instagram text-light h1 d-block"></i>

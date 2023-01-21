@@ -6,7 +6,7 @@ class Contact extends Component {
     super();
 
     this.state = {
-      name: "",
+      username: "",
       email: "",
       message: "",
       submitMessage: "",
@@ -28,9 +28,9 @@ class Contact extends Component {
   onSubmit = (event) => {
     event.preventDefault();
 
-    const { name, email, message } = this.state;
+    const { username, email, message } = this.state;
     const newContact_obj = {
-      name: name,
+      name: username,
       email: email,
       message: message,
     };
@@ -39,7 +39,7 @@ class Contact extends Component {
 
     if (isSuccessful) {
       this.setState({
-        submitMessage: `Thank you ${name}. I will contact you soon!`,
+        submitMessage: `Thank you ${username}. I will contact you soon!`,
         submitMessageTextColor: "text-info",
       });
     } else {
@@ -54,28 +54,22 @@ class Contact extends Component {
     return (
       <div className="container my-5 py-5">
         <h1 className="font-weight-light text-center py-5">
-          <span className="text-info">Thank you! </span>for your valuable time to contact me.
+          <span className="text-info">Thank you! </span>for giving your valuable time.
         </h1>
         <div className="row justify-content-center">
           <div className="col-11 col-lg-5">
             <form onSubmit={this.onSubmit}>
               <div className="form-group">
-                <label htmlFor="name">Name *</label>
-                <input type="text" name="name" className="form-control" onChange={this.onChange} required />
+                <label htmlFor="username">Name *</label>
+                <input type="text" name="username" className="form-control" onChange={this.onChange} required />
               </div>
               <div className="form-group">
                 <label htmlFor="email">Email *</label>
                 <input type="email" name="email" className="form-control" onChange={this.onChange} required />
               </div>
               <div className="form-group">
-                <label htmlFor="description">Type your message *</label>
-                <textarea
-                  className="form-control"
-                  name="description"
-                  rows="5"
-                  onChange={this.onChange}
-                  required
-                ></textarea>
+                <label htmlFor="message">Type your message *</label>
+                <textarea className="form-control" name="message" rows="5" onChange={this.onChange} required></textarea>
               </div>
               <button type="submit" className="btn btn-dark float-right" style={{ backgroundColor: "black" }}>
                 Send

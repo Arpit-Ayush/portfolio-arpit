@@ -1,6 +1,11 @@
+body{
+  background-color: black;
+}
+
 .scrollbar::-webkit-scrollbar{
   display:none;
 }
+
 
 .markdown img{
   display : block;
