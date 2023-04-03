@@ -1,0 +1,13 @@
+.scrollbar::-webkit-scrollbar{
+  display:none;
+}
+
+.markdown img{
+  display : block;
+  max-width : 100%;
+  height: auto;
+}
+
+.title_name{
+  display: inline-block;
+}

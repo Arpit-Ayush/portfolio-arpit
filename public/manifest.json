@@ -1,0 +1,15 @@
+{
+  "short_name": "Arpit's app",
+  "name": "Arpit's portfolio app",
+  "icons": [
+    {
+      "src": "portfolio_icon.png",
+      "type": "image/png",
+      "sizes": "610x608"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
