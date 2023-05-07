@@ -24,7 +24,7 @@ function ProjectPage() {
   return (
     <div className="container py-5 my-5 markdown">
       <div className="justify-content-center" style={{ pointerEvents: "none" }}>
-        <img src={imageUrl} alt={title} style />
+        <img src={imageUrl} alt={title} style={{ width: "100%", height: "10%" }} />
       </div>
       <h1 className="font-weight-light text-center my-5">
         <u>{title}</u>

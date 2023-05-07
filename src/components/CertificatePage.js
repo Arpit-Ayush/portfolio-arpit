@@ -23,7 +23,7 @@ function CertificatePage() {
   return (
     <div className="container py-5 my-5 markdown">
       <div className="justify-content-center" style={{ pointerEvents: "none" }}>
-        <img src={imageUrl} alt={title} style={{ width: "100%", height: "70%" }} />
+        <img src={imageUrl} alt={title} style={{ width: "100%", height: "50%" }} />
       </div>
       <h1 className="font-weight-light text-center my-5">{title}</h1>
     </div>

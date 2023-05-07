@@ -35,10 +35,9 @@ function About() {
             <h6 className="text-center">What do I believe in?</h6>
             <p>
               The values and ethics I live by are one of the most important aspects of my life. Some of the core values
-              I subscribe to are: Respect, Loyalty, Humility, Punctuality, Hardwork &#40;Even if one has more talent
-              than others&#41;, Honesty and Integrity. Along with these the most important thing I think a person should
-              have is the ability to try and grow oneself in different areas of life and to help others present around
-              him grow as well.
+              I subscribe to are: Respect, Punctuality, Hardwork &#40;Even if one has more talent than others&#41;, and
+              Honesty. Along with these the most important thing I think a person should have is the ability to try and
+              grow oneself in different areas of life and to help others present around him grow as well.
             </p>
           </div>
           <div className="col-12 col-md-6 pt-5 px-5">

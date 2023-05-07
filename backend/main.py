@@ -284,7 +284,7 @@ def send_contact_details():
 
     mail = Mail(application)
 
-    mail.send_message("Someone contacted you through your portfolio website!", sender = email_sender, recipients=[email_receiver], body=("Contact Details: %s at %s\n\nMessage:-\n\n"%(contacts_name, contacts_ema$
+    mail.send_message("Someone contacted you through your portfolio website!", sender = email_sender, recipients=[email_receiver], body=("Contact Details: %s at %s\n\nMessage:-\n\n"%(contacts_name, contacts_email)) + contact_form["message"])
 
     response = make_response({"isSuccessful":True})
     return response
@@ -298,4 +298,4 @@ if __name__ != "__main__" :
   uwsgi_logger = logging.getLogger("uwsgi error")
   application.logger.handlers = uwsgi_logger.handlers
   application.logger.setLevel(uwsgi_logger.level)
-
+  
