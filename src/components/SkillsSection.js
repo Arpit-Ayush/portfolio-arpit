@@ -48,7 +48,7 @@ function SkillsSection() {
               <h1 className="font-weight-light">
                 <span className="text-info">Technology</span> stack
               </h1>
-              <div className="lead pb-5">These are my weapons, which I'm getting better at.</div>
+              <div className="lead pb-5">These are my weapons which I've used.</div>
               {finalSkillRow}
             </div>
           </div>

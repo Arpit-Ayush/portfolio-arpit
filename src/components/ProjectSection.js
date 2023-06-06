@@ -14,7 +14,7 @@ function ProjectSection() {
             <h1 className="font-weight-light">
               My <span className="text-info">Projects</span>
             </h1>
-            <div className="lead">These are my amateur level Projects. :P</div>
+            <div className="lead">These are my amateur level Projects.</div>
             <div className="row my-5 pt-3">
               {projects.slice(0, 3).map((project) => (
                 <div key={project.id} className="col-12 col-md-4 my-2">
